@@ -1,0 +1,34 @@
+{
+  "name": "@finn-no/finance-lib",
+  "version": "2.0.0",
+  "description": "frontend finance utils",
+  "type": "module",
+  "exports": "./dist/finance.js",
+  "module": "dist/finance.js",
+  "types": "./types/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "/dist",
+    "/types"
+  ],
+  "homepage": "https://github.com/finn-no/finance-lib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/finn-no/finance-lib.git"
+  },
+  "scripts": {
+    "check": "tsc",
+    "test": "node test.js",
+    "build": "rollup -c",
+    "preversion": "npm run test && npm run check && npm run build",
+    "version": "npm publish",
+    "postversion": "git push --follow-tags"
+  },
+  "author": "Dave Honneffer",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^2.18.0",
+    "typescript": "^4.3.3",
+    "uvu": "^0.5.1"
+  }
+}
