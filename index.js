@@ -69,12 +69,21 @@ export function roundDecimals(n, decimals = 2) {
  * @returns {string}
  */
 export function internationalize(n, decimals) {
-  const formatter = new Intl.NumberFormat('no', {
+  // const formatter = new Intl.NumberFormat('no', {
+  //   style: 'decimal',
+  //   minimumFractionDigits: decimals,
+  //   maximumFractionDigits: decimals,
+  // })
+  const formatter = new Intl.NumberFormat('en-US', {
     style: 'decimal',
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,
   })
-  return formatter.format(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+  return formatter
+    .format(n) // get it into US locale to normalize it
+    .replace(/,/g, '') // drop all commas (thousand-separators)
+    .replace(/\./g, ',') // replace all periods with commas (decimal-separators)
+    .replace(/\B(?=(\d{3})+(?!\d))/g, nbsp) // reformat it to nb-NO
 }
 
 /**
