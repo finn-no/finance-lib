@@ -1,6 +1,6 @@
 {
   "name": "@finn-no/finance-lib",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "frontend finance utils",
   "type": "module",
   "exports": "./dist/finance.js",
