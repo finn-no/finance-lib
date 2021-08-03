@@ -74,7 +74,7 @@ export function internationalize(n, decimals) {
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,
   })
-  return formatter.format(n)
+  return formatter.format(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
 }
 
 /**
