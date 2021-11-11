@@ -156,7 +156,7 @@ export function effectiveInterest({ loanAmount, monthlyPayment, period }) {
   let low = 1.0
   let guess = 0.0
   let previousGuess = 0
-  let precision = 5
+  let precision = 8
   let guessLimit = Math.pow(10, -1 * precision)
   do {
     previousGuess = guess

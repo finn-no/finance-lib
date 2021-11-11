@@ -72,7 +72,7 @@ Finance('effectiveInterest', () => {
   assert.ok(between(.3046, r1))
 
   const r2 = effectiveInterest({ loanAmount: 25000, monthlyPayment: 561, period: 5 })
-  assert.ok(between(.1315, r2))
+  assert.ok(between(.1311, r2))
 
   const r3 = effectiveInterest({ loanAmount: 2100000, monthlyPayment: 8870, period: 25 })
   assert.ok(between(.0199, r3))
